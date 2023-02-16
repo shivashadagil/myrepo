@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;            
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        table{
+            margin-top: 50px;
+            width: 60%;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        thead td{
+            background-color: chocolate;
+            border-bottom: 1px solid rgb(121, 121, 121);
+        }
+
+        tbody td{
+            border-bottom: 1px solid rgb(121, 121, 121);
+        }
+
+        a{
+            
+            margin: 10px;
+            padding: 5px;
+            background-color: rgb(0, 102, 255);
+            position: absolute;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/home/home">Home</a>
+    <table>
+        <thead>
+            <td>Si. No.</td>
+            <td>Conatact Name</td>
+            <td>Category</td>
+            <td>Status</td>
+            <td>Action</td>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{contact.id}}</td>
+                <td>{{contact.contact_name}}</td>
+                <td>{{contact.category}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
